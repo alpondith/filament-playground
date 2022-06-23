@@ -34,14 +34,23 @@ class PostResource extends Resource {
     public static function table(Table $table) : Table {
         return $table
             ->columns([
-                TextColumn::make('title')->searchable(),
-                TextColumn::make('slug')->searchable(),
-                TextColumn::make('content')->searchable(),
+                TextColumn::make('title')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('slug')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('content')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('created_at')
+                    ->sortable()
                     ->dateTime(),
                 TextColumn::make('updated_at')
+                    ->sortable()
                     ->dateTime(),
             ])
+            ->defaultSort('title', 'desc')
             ->filters([
                 //
             ]);
