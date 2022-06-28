@@ -41,6 +41,8 @@ class PostResource extends Resource {
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('content')
+                    ->limit(30)
+                    ->tooltip(fn($record): string => $record->content)
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')

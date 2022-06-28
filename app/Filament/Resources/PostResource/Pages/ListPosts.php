@@ -14,6 +14,6 @@ class ListPosts extends ListRecords {
 
     protected function getTableRecordsPerPageSelectOptions(): array
     {
-        return [15, 30, 100];
+        return [10, 30, 100];
     }
 }
